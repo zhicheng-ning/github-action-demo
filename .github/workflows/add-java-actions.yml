@@ -11,3 +11,10 @@ jobs:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '17'
       - run: java -version
+  myself-action:
+    runs-on: self-hosted
+    needs: test-java
+    steps:
+      - uses: actions/checkout@v2
+      - run: java -version
+      - run: cat /etc/redhat-release && uname -a
