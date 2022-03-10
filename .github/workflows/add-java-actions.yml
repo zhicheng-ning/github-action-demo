@@ -12,7 +12,7 @@ jobs:
           java-version: '17'
       - run: java -version
   myself-action:
-    runs-on: self-hosted
+    runs-on: [self-hosted, my-server]
     needs: test-java
     steps:
       - uses: actions/checkout@v2
